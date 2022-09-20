@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{verbatim} %commenting package
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+\usetikzlibrary{automata}
+\pagestyle{empty}
+\begin{document}
+
+
+% Define style for nodes
+\tikzstyle{vertex}=[circle, draw, fill=black,
+                        inner sep=0pt, minimum width=4pt]
+
+
+\begin{tikzpicture}
+
+%\node[vertex,label={[shift={(0.3,-0.3)}]$v$}](v1) at (-30:1.7) {}; 
+
+\node[vertex,label={[shift={(0.3,-0.4)}]$v$}](v2) at (-8:5.5) {}; 
+
+\node[vertex,label={$v^'$}](v3) at (-2:7) {}; 
+
+\node[vertex,label={[shift={(0.3,-0.4)}]$v$}](v1) at (-30:1.65) {}; 
+
+\node[circle, draw=black,scale=10] (a) at (0,0) {};
+
+\node[circle, draw=black,scale=10] (b) at (4,0) {};
+
+\draw [->,>=latex,thick] (v2) -- (v3);
+
+
+\node[circle, draw=white,label={\Huge $G$},scale=1] (g1) at (0,-.5) {};
+\node[circle, draw=white,label={\Huge $G^'$},scale=1] (g2) at (4,-.5) {};
+
+%\draw [->,>=latex,thick] (v1) -- (v2);
+
+
+\end{tikzpicture}
+
+
+\end{document} 

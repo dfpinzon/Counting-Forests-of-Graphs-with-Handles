@@ -1,0 +1,166 @@
+\documentclass[12pt, crop, tikz]{report}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{shapes, backgrounds, matrix, fit}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+%\usepgfplotslibrary{external}
+%\tikzexternalize
+\usepackage{tikz-cd}
+%\pagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsthm ,amssymb,amscd,amsmath,enumerate, comment
+%xypic
+}
+%\usepackage{xcolor}
+
+\setlength{\parindent}{0cm} \setlength{\parskip}{0.2cm plus0.05cm
+minus0.05cm} \setlength{\oddsidemargin}{0cm}
+\setlength{\footskip}{30pt} \setlength{\topmargin}{-2.5cm}
+\setlength{\headheight}{12.5pt} \setlength{\headsep}{0.5cm}
+\setlength{\textwidth}{17cm} \setlength{\textheight}{24.5cm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\newenvironment{solution}
+ % {\begin{proof}[Solution]}
+ % {\end{proof}}
+\def \1{\u a}
+\def \2{\c s}
+\def \5{\c t}
+\def \6{\^ a}
+\def \8{\^{\i}}
+\newcommand{\im}{{\rm im\ }}
+\newcommand{\rstar}{\hfill \ensuremath{\color{red} \bigstar}\\}
+\renewcommand{\solution}[1]{\textbf{(#1)}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathbb C}
+
+
+\usepackage{calc}
+\begin{document}
+\begin{center}
+    \Large \textbf{MATH 3500}\\
+    \Large\textbf{Homework 1}\\
+    \Large \textbf{Tyler Smith}
+\end{center}
+
+\begin{center}
+{\bf Chapter 1}
+\end{center}
+
+\begin{enumerate}
+    \item[{\bf 1.}] With pictures and words, describe the symmetry of $D_3$.
+    
+    \item[{\bf 2.}] Write out a complete Cayley table for $D_3$. Is $D_3$ Abelian?
+    
+    \item[{\bf 5.}] For n $\geq$ 3, describe the elements of $D_n$. How many elements does $D_n$ have?
+    
+    \item[{\bf 6.}] In $D_n$, explain geometrically why a reflection followed by a reflection must be a rotation.
+    
+    \item[{\bf 7.}] In $D_n$, explain geometrically why a rotation followed by a rotation must be a rotation.
+    
+    \item[{\bf 10.}] If $r_1$, $r_2$, and $r_3$ represent rotations from $D_n$ and $f_1$, $f_2$, and $f_3$ represent reflections from $D_n$, determine whether $r_1 r_2 f_1 r_3 f_2 f_3 r_3$ is a rotation or reflection.
+    
+    \item[{\bf 11.}] Suppose that a, b, and c are elements of a dihedral group. Is $a^2 b^4 a c^5 a^3 c$ a rotation or a reflection? Explain your reasoning.
+    
+    \item[{\bf 22.}] If F is a reflection in the dihedral group $D_n$ find all elements X in $D_n$ such that $X^2$ = F and all elements X in $D_n$ such that $X^3$ = F.
+     
+     \begin{center}
+         {\bf Chapter 2}
+     \end{center}
+     
+     \item[{\bf 4.}] Which of the following sets are closed under the given operation?
+     
+     \subitem{\bf a.} [0, 4, 8, 12] addition mod 16
+     
+     \subitem{\bf b.} [0, 4, 8, 12] addition mod 15
+     
+     \subitem{\bf c.} [1, 4, 7, 13] multiplication mod 15
+     
+     \subitem{\bf d.} [1, 4, 5, 7] multiplication mod 9
+     
+     \item[{\bf 5.}] In each case, perform the indicated operation.
+     
+     \subitem{\bf a.} 13 in $Z_20$
+     
+     \subitem{\bf b.} 13 in $U(14)$
+
+     \subitem{\bf c.} n - 1 in $U(n) (n > 2)$
+
+     \subitem{\bf d.} $3-2i$ in $C^*$, the group of nonzero complex numbers under multiplication
+     
+     \item[{\bf 6.}] In each case, perform the indicated operation.
+     
+     \subitem{\bf a.} In $C^*$, ($7+5i$)($-3+2i$)
+
+     \subitem{\bf b.} In GL(2,$Z_13$), det 
+     \begin{bmatrix}
+     7 & 4 \\
+     1 & 5 \\
+     \end{bmatrix}
+
+     \subitem{\bf c.} In GL(2,R), 
+     \begin{bmatrix}
+     6 & 3 \\
+     8 & 2 \\
+     \end{bmatrix}$^{-1}$
+
+     \subitem{\bf d.} In GL(2,$Z_7$), 
+     \begin{bmatrix}
+     2 & 1 \\
+     1 & 3 \\
+     \end{bmatrix}$^{-1}$
+
+     \item[{\bf 8.}] List the elements of $U(20)$.
+     
+     \item[{\bf 9.}] Show that \{$1, 2, 3$\} under multiplication modulo 4 is not a group but that \{$1, 2, 3, 4$\} under multiplication modulo 5 is a group.
+     
+     \item[{\bf 12.}] In $U(9)$ find the inverse of 2, 7, and 8.
+     
+     \item[{\bf 13.}] Translate each of the following multiplicative expressions into its additive counterpart. Assume that the operation is commutative.
+     
+     \subitem{\bf a.} $a^2b^3$
+
+     \subitem{\bf b.} $a^{-2}(b^{-1}c)^2$
+
+     \subitem{\bf c.} $(ab^2)^{-3}c^2 = e$
+     
+    \item[{\bf 16}] Show that the set \{5, 15, 25, 35\} is a group under multiplication modulo 40. What is the identity element of this group? Can you see any relationship between this group and $U(8)$?
+    
+    \item[{\bf 23}] (Law of Exponents for Abelian Groups) Let a and b be elements of an Abelian group and let n be any integer. Show that $(ab)^{-1} = a^nb^n$. Is this also true for non-Abelian groups?
+    
+    \item[{\bf 25}] Prove that a group G is Abelian if and only if $(ab)^{-1} = a^{-1}b^{-1}$ for all a and b in G.
+    
+    \item[{\bf 26}] Prove that in a group, $(a^{-1})^{-1} = a$ for all a.
+    
+    \item[{\bf 47}] Prove that if G is a group with the property that the square of every element is the identity, the G is Abelian.
+    
+    \item[{\bf 49}] List the six elements of GL($2, Z_2$). Show that this group is non-Abelian by finding two elemetns that do not commute.
+     
+\end{enumerate}
+
+\end{document}

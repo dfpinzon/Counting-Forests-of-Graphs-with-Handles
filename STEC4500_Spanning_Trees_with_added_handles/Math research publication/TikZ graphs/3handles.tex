@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{verbatim} %commenting package
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+\usetikzlibrary{automata}
+\pagestyle{empty}
+\begin{document}
+
+
+% Define style for nodes
+\tikzstyle{vertex}=[circle, draw, fill=black,
+                        inner sep=0pt, minimum width=4pt]
+
+
+\begin{tikzpicture}
+                        
+\node[vertex,label={0}](v0) at (1,0.5) {};
+
+\node[vertex,label={[shift={(0.15,-0.6)}]1}](v1) at (-60:2) {};
+\node[vertex,label={[shift={(0.25,-0.3)}]2}](v2) at (-20:2) {}; 
+\node[vertex,label={[shift={(0.15,0)}]3}](v3) at (-10:2) {}; 
+\node[vertex,label={[shift={(0.05,-0.1)}]4}](v4) at (20:2) {}; 
+\node[vertex,label={5}](v5) at (30:2) {}; 
+\node[vertex,label={6}](v6) at (60:2) {}; 
+
+\node[vertex,label=below/:{n+1}](v7) at (-35:3.5) {}; 
+\node[vertex,label=below/:{n+2}](v8) at (5:3.5) {}; 
+\node[vertex,label=below/:{n+3}](v9) at (45:3.5) {}; 
+
+\node[circle, draw=black,label={},scale=12] (a) at (0,0) {};
+\node[circle, draw=white,label={\Huge $G$},scale=1] (a) at (0,-.5) {};
+
+\draw [->,>=latex,thick] (v1) -- (v7);
+\draw [->,>=latex,thick] (v7) -- (v2);
+\draw [->,>=latex,thick] (v3) -- (v8);
+\draw [->,>=latex,thick] (v8) -- (v4);
+\draw [->,>=latex,thick] (v5) -- (v9);
+\draw [->,>=latex,thick] (v9) -- (v6);
+
+\end{tikzpicture}
+
+
+\end{document} 

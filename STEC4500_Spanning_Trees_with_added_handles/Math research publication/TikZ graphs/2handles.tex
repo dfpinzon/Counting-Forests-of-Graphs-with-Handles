@@ -1,0 +1,39 @@
+
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{verbatim} %commenting package
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+\usetikzlibrary{automata}
+\pagestyle{empty}
+\begin{document}
+
+
+% Define style for nodes
+\tikzstyle{vertex}=[circle, draw, fill=black,
+                        inner sep=0pt, minimum width=4pt]
+
+
+\begin{tikzpicture}
+                        
+\node[vertex,label={0}](v0) at (1,0.5) {};
+\node[vertex,label={[shift={(0.15,-0.6)}]1}](v1) at (-30:2) {};
+\node[vertex,label=below/:{n+1}](v2) at (-15:4) {}; 
+\node[vertex,label={[shift={(0.25,-0.2)}]2}](v3) at (0:2) {}; 
+\node[vertex,label={3}](v4) at (15:2) {}; 
+\node[vertex,label=below/:{n+2}](v5) at (30:4) {}; 
+\node[vertex,label={4}](v6) at (45:2) {}; 
+
+\node[circle, draw=black,label={},scale=12] (a) at (0,0) {};
+\node[circle, draw=white,label={\Huge $G$},scale=1] (a) at (0,-.5) {};
+
+%\draw (0,0) circle (2);
+\draw [->,>=latex,thick] (v1) -- (v2);
+\draw [->,>=latex,thick] (v2) -- (v3);
+\draw [->,>=latex,thick] (v4) -- (v5);
+\draw [->,>=latex,thick] (v5) -- (v6);
+
+\end{tikzpicture}
+
+
+\end{document} 

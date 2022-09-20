@@ -1,0 +1,56 @@
+
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{verbatim} %commenting package
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc,intersections,through,backgrounds}
+\usetikzlibrary{automata}
+\pagestyle{empty}
+\begin{document}
+
+
+% Define style for nodes
+\tikzstyle{every node}=[circle, draw, fill=black,
+                        inner sep=0pt, minimum width=4pt]
+
+
+\begin{tikzpicture}
+                        
+\node[label={[shift={(0,0.1)}]1}](v1) at (90:2) {};
+
+\node[label={[shift={(0,-0.5)}]4}](v4) at (-90:2) {};
+
+\node[label={[shift={(0.3,-0.3)}]5}](v5) at (-30:2) {};
+
+\node[label={[shift={(0.3,-0.1)}]6}](v6) at (30:2) {};
+
+\node[label={[shift={(-0.3,-0.3)}]3}](v3) at (210:2) {};
+
+\node[label={[shift={(-0.3,-0.1)}]2}](v2) at (150:2) {};
+
+\foreach \from/\to in {v1/v2, v2/v3, v3/v4, v4/v5, v5/v6, v6/v1}
+    \draw [->,>=latex] (\from) -- (\to);
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+                        
+\node[label={[shift={(0,0.1)}]1}](v1) at (90:2) {};
+
+\node[label={[shift={(0,-0.5)}]4}](v4) at (-90:2) {};
+
+\node[label={[shift={(0.3,-0.3)}]5}](v5) at (-30:2) {};
+
+\node[label={[shift={(0.3,-0.1)}]6}](v6) at (30:2) {};
+
+\node[label={[shift={(-0.3,-0.3)}]3}](v3) at (210:2) {};
+
+\node[label={[shift={(-0.3,-0.1)}]2}](v2) at (150:2) {};
+
+\foreach \from/\to in {v1/v2, v2/v3, v3/v4, v4/v5, v5/v6, v6/v1}
+    \draw  (\from) -- (\to);
+
+\end{tikzpicture}
+
+
+\end{document} 

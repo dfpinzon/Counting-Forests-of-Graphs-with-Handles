@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage{3500Quiz}
+\usepackage{bm}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\begin{document}
+
+\quizheading{3}{Patrick Graham}
+
+\affirmation
+
+\exercise{1.  Let \(R\) and \(S\) be rings.  Define addition and multiplication on the Cartesian product \(R\times S\) as follows:
+\begin{align*}
+(r,s)+(r^\prime,s^\prime) &= (r+r^\prime, s+s^\prime) \\
+(r,s)(r^\prime,s^\prime) &= (rr^\prime, ss^\prime)
+\end{align*}
+Then \(R\times S\) is a ring.  If \(R\) and \(S\) are both commutative, then so is \(R\times S.\)  If both have an identity, then so does \(R\times S.\)}
+\hint  It may seem like a lot of work to show that all the axioms hold, but it isn't.  Remember:  You already \emph{know} that the axioms for a ring hold in \(R\) and in \(S.\)
+
+\proof{Assume \(R\) and \(S\) be commutative rings with identity with addition and multiplication defined above for \(R\times S\).
+\begin{itemize}
+\item[(a)] Additive and Multiplicative Closure:
+By assumption \((r,s)+(r^\prime,s^\prime) &= (r+r^\prime, s+s^\prime) \in R\times S\) and \((r,s)(r^\prime,s^\prime) &= (rr^\prime, ss^\prime) \in R\times S\) this means that \(R\times S\) is closed under addition and multiplication by assumption. 
+\item[(b)]For the commutative property for both addition and multiplication we have that \((r,s)+(r^\prime,s^\prime) &= (r+r^\prime, s+s^\prime)&= (r^\prime+r, s^\prime+s) &= (r^\prime,s^\prime)+(r,s) \) and \((r,s)(r^\prime,s^\prime) &= (rr^\prime, ss^\prime) &=(r^\prime \cdot r, s^\prime \cdot r)&=(r^\prime,s^\prime)(r,s) \).
+\item[(c)] For the Associative Property of addition and multiplication we have that \(((r,s)+(r^\prime,s^\prime))+(t,t^\prime) &= ((r+r^\prime) +t, (s+s^\prime) +t^\prime) &= (r+(r^\prime +t), s+(s^\prime +t^\prime)) = (r,s)+((r^\prime,s^\prime)+(t,t^\prime))\). And \(((r,s)(r^\prime,s^\prime))(t,t^\prime) &= ((rr^\prime)t, (ss^\prime)t)) &= (r(r^\prime t), (s(s^\prime t)) &= (r,s)((r^\prime,s^\prime)(t,t^\prime))\).
+\item[(d)] For the Additive Identity and inverses there exists element 0 such that \((0,0) +(r,s)= (r,s) and there exists elements (-r,-s) such that (r,s) + (-r,-s) = (0,0).\)
+\item[(e)] For the Distributive law \((r,r^\prime)((s,s^\prime) + (t, t^\prime)) &=(r,r^\prime)((s+t),(s^\prime+t^\prime)) &=(r(s+t), r^\prime(s^\prime+t^\prime)).\)
+\item[(f)] Identity - Because Both R and S Have identity there exists an element \((1,1) \in R \times S such that (1,1)(r,s) &= (r,s)(1,1)\). 
+
+\end{itemize}
+}
+
+
+
+\qed
+
+\exercise{2.  Let \(R\) be a ring, and assume that \(r^2=r\) for all \(r\in R.\)
+\begin{itemize}
+\item[(a)]  Prove that \(r+r=0\) for all \(r\in R.\)
+\item[(b)]  Prove that \(R\) is commutative.
+\end{itemize}}
+
+\proof
+{
+\begin{itemize}
+
+\item[(a)]  Prove that \(r+r=0\) for all \(r\in R.\)
+Assume that \(r^2 &= r\) for all \(r \in R \). Indubitably \((-r) = (-r)^2 &= (r)^2 = r\), So \(r^2 - r &= 0 &= r -r = 0\)
+\begin{align*}
+r^2 = r \\
+r^2 - r &= 0 \\
+r + (-r) &= 0 \\
+r + r &= 0.
+\end{align*}
+\item[(b)]  Prove that \(R\) is commutative.
+
+\end{itemize}
+}
+
+\qed
+
+\exercise{3.  Let \(R\) be a ring.  The \textbf{center} of \(R\) is the set 
+\(\bm{\{c\in R \; | \; cr=rc \; \text{for all} \; r\in R\}}\).  Prove that the center of \(R\) is a subring of \(R\).}
+\hint Since \(R\) is an arbitrary ring, you don't know what its elements look like.  No matter.  You can show that the center of \(R\) satisfies the subring test simply by using \(c\) and \(r\) to denote an element of the center and any element of the ring, respectively.
+
+\proof
+{Assume that \(c,t \in \textbf{center of } R\) and \(r \in R  \) 
+\begin{align*}
+r(c-t) &= cr - tr \\
+cr- tr &= (c-t)r \in C \textbf{center of R}.
+\end{align*} 
+Assume that \(c,t \in \textbf{center of } R\). Due to the fact that \(cr= rc\) for all r \in R, \(ct = ct\) for all \(c,t \in R\). So \(ct \in C \textbf{center of R}\).
+}
+
+\qed
+
+\exercise{4.  Let \(R\) be a commutative ring with identity, and let \(n\) be a positive integer.  Prove that the center of Mat\(_n(R)\) is the set of scalar matrices. A \textbf{scalar matrix} is a matrix of the form \(rI\), having \(r\)'s on the main diagonal and \(0\)'s elsewhere.}
+\hint Let \(S:=\{rI \; | \; r\in R\}\) be the set of scalar matrices, and let \(C\) be the center of Mat\(_n(\mathbb{R})\).  One approach to the inclusion \(C\subseteq S\) runs as follows:  Any matrix in the center must commute with each matrix \(E_{kl}\) having 1 in the \((k,l)\) slot and zeros elsewhere.  Use that the \((i,j)\) entry of \(E_{kl}\) is \(\delta_{ik}\delta_{jl},\) where \(\delta_{ab}\) is the \textbf{Kronecker delta} defined to be 1 if \(a=b\) and zero otherwise.  
+
+The other inclusion \(S\subseteq C\) should not take more than a couple of lines.  Also, please note:  I'll give you 2.4 out of 3 points just for getting this \emph{one} inclusion. 
+
+\proof
+{
+\(S\subseteq C\)
+    Assume \(rI \in S\) and \(q \in Mat_n(R) \), well \(qrI = rIq\) which shows that \(qrI \in C\). The reasoning of this equality is due to the fact that qr is going to be along the diagonals in either of the matrices it does not mater whether we multiply I by the scalars qr or the matrix rI bay any scalar.
+    
+}
+
+\qed
+
+\end{document} 

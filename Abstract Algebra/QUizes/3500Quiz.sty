@@ -1,0 +1,72 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{3500Quiz}[2019/08/06 3500 Quiz Package]
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{cancel}
+
+% Use block paragraphs
+\parindent=0pt
+\parskip=7pt
+
+% Extend width of text
+\setlength{\textwidth}{405pt}
+\setlength{\oddsidemargin}{32pt}
+\setlength{\evensidemargin}{32pt}
+
+% Heading
+\newcommand{\quizheading}[2] % #1=quiz number,  #2=student name
+{
+  {\large\textbf{MATH 3500}}\hfill{\large#2}
+  \par{\large Quiz #1}\hfill\today\par\bigskip
+}
+\newcommand{\affirmation}
+{
+{\par\bfseries\footnotesize By submitting this quiz you affirm that you have completed it entirely on your own using
+only the online textbook on D2L and notes that you have written down from the lectures and class activities.\par\medskip}
+}
+
+% Solution color
+\definecolor{soln-color}{rgb}{0.2,0.3,0.1}
+
+% Environment definitions
+\newenvironment{exercise}[1]{\textbf{#1}\quad}{\par\medskip}
+\newenvironment{hint}{\par\smallskip Hint:\quad}{}
+\newenvironment{solution}
+  {\color{soln-color}}
+  {\par\bigskip\bigskip}
+\renewenvironment{proof}{\emph{Proof}:\quad}{\hfill\qed}
+\newenvironment{disproof}{\emph{Disproof}:\quad}{\hfill\qed}
+\newenvironment{enum}
+  {\begin{enumerate}\renewcommand{\theenumi}{{\rm(\roman{enumi})}}
+  \renewcommand{\labelenumi}{\theenumi}}
+  {\end{enumerate}}
+\newenvironment{alphenum}
+  {\begin{enumerate}\renewcommand{\theenumi}{{\rm(\alph{enumi})}}
+  \renewcommand{\labelenumi}{\theenumi}}
+  {\end{enumerate}}
+
+% Command definitions
+\newcommand\N{{\mathbb{N}}}
+\newcommand\Z{{\mathbb{Z}}}
+\newcommand\Q{{\mathbb{Q}}}
+\newcommand\R{{\mathbb{R}}}
+\newcommand\Complex{{\mathbb{C}}}  %\C is already defined
+\newcommand\D{{\mathbf D}}
+\newcommand\F{{\mathbf F}}
+\newcommand\Mat{\operatorname{\mathrm{Mat}}}
+\newcommand\GL{{\operatorname{GL}}}
+\newcommand\SL{\operatorname{SL}}
+\newcommand\PSL{\operatorname{PSL}}
+\newcommand\Sym[1]{\operatorname{Sym}(#1)}
+\newcommand\im{\operatorname{im}}
+\newcommand\diag{\operatorname{diag}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\cyclic[1]{\langle#1\rangle}
+\newcommand\ord{\operatorname{ord}}
+\newcommand\length{\operatorname{length}}
+\newcommand\lcm{\operatorname{lcm}}
+\newcommand{\onlyif}{\ \Rightarrow\ }

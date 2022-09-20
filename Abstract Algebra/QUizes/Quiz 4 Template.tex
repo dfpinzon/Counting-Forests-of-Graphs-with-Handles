@@ -1,0 +1,90 @@
+\documentclass[11pt]{article}
+\usepackage{3500Quiz}
+\usepackage{bm}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\vp}{\varphi}
+
+\begin{document}
+
+\quizheading{4}{Patrick Graham}
+
+\affirmation
+
+\exercise{1. Prove that, if \(\bm{\vp:\Z\rightarrow \Z}\) is an isomorphism, then \(\bm{\vp}\) is the identity map. }
+
+\proof {Assume that \(\bm{\vp:\Z\rightarrow \Z}\) is an isomorphism, this means that 
+\begin{itemize}
+\item[(i)] \(\bm{\vp}\) is bijective
+\item[(ii)] \(\bm{\vp(r+s)}\) = \(\bm{\vp(r)} + \bm{\vp(s)}\)
+\item[(iii)] \(\bm{\vp(rs)}\) = \(\bm{\vp(r)} \bm{\vp(s)}\) 
+\end{itemize}
+
+We need to show is that \(\bm{\vp(r)} = r\), Because the ring \(\Z\) has identity and due to property (i) of isomorphisms \(\bm{\vp}\) is also surjective, due to property (v) of theorem 3.3.9 \(\bm{\vp(1)} = 1\). Well \(\bm{\vp(r)}= \bm{\vp(\underbrace{1+..+1}_{\text{r copies}})} =\underbrace{\bm{\vp(1)}+...+ \bm{\vp(1)}}_\text{r copies} = \underbrace{1 + ... + 1}_\text{r copies} = r.\)   
+
+}
+
+\qed
+
+\exercise{2. It can be shown that \(S:=\{\ol{0},\ol{4},\ol{8},\ol{12},\ol{16},\ol{20},\ol{24}\}\) is a subring of \(\Z_{28}\).  Prove that the map \(\psi:\Z_7\rightarrow S\) given by \(\psi([x])=\ol{8x}\) is a well-defined isomorphism.}
+
+\proof
+{
+\begin{itemize}
+    \item[(a)]bijective- The map \(\psi:\Z_7 \rightarrow S\) is a bijection because each element of the codomain is mapped to by exactly one element of the domain demonstrated below.
+    \begin{itemize}
+        \item[(i)] - \(\psi(\ol{0}) =  \ol{8\cdot0} =\ol{0}\)
+        \item[(ii)] - \(\psi(\ol{1}) = \ol{8\cdot1} =\ol{8}\)
+        \item[(iii)] - \(\psi(\ol{2}) = \ol{8\cdot2} =\ol{16}\)
+        \item[(iiii)] - \(\psi(\ol{3}) = \ol{8\cdot3} =\ol{24}\)
+        \item[(v)] - \(\psi(\ol{4}) = \ol{8\cdot4} =\ol{32} = \ol{4}\)
+        \item[(vi)] -\(\psi(\ol{5}) = \ol{8\cdot5} =\ol{40} = \ol{12}\)
+        \item[(vii)] - \(\psi(\ol{6}) = \ol{8\cdot6} =\ol{48} = \ol{20}\)
+        
+    \end{itemize}
+    
+    
+    \item[(b)] perseves addition - \(\Z_7 = \{\ol{0},\ol{1},\ol{2},\ol{3},\ol{4},\ol{5},\ol{6}\} \psi([x]+[y]) = \psi([x]) + \psi([y]), \ol{8\cdot[x+y]} =\ol{8x+8y}= \ol{8x} + \ol{8y}\) 
+    \item[(c)]preserves multiplication - \(\psi([r][s])= \ol{8xy}. \) S is a sub-ring of \(\Z_{28}\) so  \(\ol{8} = \ol{64}\) because of \(64 &\equiv 8 \mod{28}\). Thus \(\ol{8xy} = \ol{64xy} = \ol{8x8y} = \ol{8x}\ol{8y} = \psi(x)\psi(y).\) 
+    \item[(d)] well defined-Let \(\ol{x}\) and \(\ol{x\prime}\) be two representatives of the same congruence class of \(\Z_7\), then \(\ol{x}\) and \(\ol{x\prime}\) can be written as \(\ol{x} = 7n + a \) and \(\ol{x\prime} = 7m + a \), for \(n,m \in Z\) and \(a\in \{0,1,2,3,4,5,6\}\).Well \(\psi(\ol{x}) = \ol{8x} = \ol{8(7n+a)} = \ol{56n+8a}\) and \(\psi(\ol{x\prime}) = \ol{8x\prime} = \ol{8(7m+a)} = 56m+8a\) hence \(\psi(x) - \psi(x\prime) = 56n+8a -(56m+8a) = 56(n-m).\) Well \(28 \mid 56(m-n)\) so \(x\) and \(x\prime\) are congruent mod 28 thus the function is well defined.  
+    
+\end{itemize}
+}
+
+\qed
+
+\exercise{3. Let \(R\) be a ring with identity.  If there is a smallest positive integer \(n\) such that \(n\cdot 1=0,\) then \(R\) is said to have \textbf{characteristic n}.  If no such \(n\) exists, then \(R\) is said to have \textbf{characteristic 0}.  
+\begin{itemize}
+\item[(a)]  Let \(S\) and \(T\) be rings, and let \(f:S\rightarrow T\) be an isomorphism.  Prove that for any integer \(m>0\) and any \(r\in S\), we have \(f(mr)=mf(r)\).
+\item[(b)]  Let \(R\) be a ring with identity and with characteristic \(n>0.\) Prove that any ring isomorphism on \(R\) preserves its characteristic.
+\end{itemize}
+}
+
+
+\proof
+{
+\begin{itemize}
+    \item[(a)]- f is an isomorphism hence \(f(mr)= f(\underbrace{r+..+r}_\text{m copies}) = \underbrace{f(r)+..+f(r)}_\text{m copies} = mf(r).\)
+    \item[(b)]- Let \(\vp\) be any ring isomorphism. It follows that \(\vp(n\cdot1) = \vp(n)\vp(1) = \vp(n)\cdot1 = n \cdot 1 = 0 = \vp(0).\)
+\end{itemize}
+}
+
+\qed
+
+\exercise
+{
+4. Prove that isomorphism is an equivalence relation on the set of all rings.  You may assume elementary results regarding the inverses and compositions of bijections.
+}
+
+\proof
+{ let \(\vp:R\rightarrow S \) be the isomorphism from a Ring to a Ring. 
+Well to show that it is an equivalence relation we need to show that \(\vp\) is reflexive, symmetric ,transitive.
+
+\begin{itemize}
+    \item[reflexive]-By Example 3.3.4 we saw that R \(\cong\) R is isomorphic for any ring.
+    \item[symmetric]- Assume \(R\cong S \) then there exists a \(\vp^(-1):R\prime \rightarrow R\) because \(\vp\) is a bijection then \(\vp^(-1)\) is a bijection.  \ 
+\end{itemize}
+
+}
+\qed
+
+\end{document} 

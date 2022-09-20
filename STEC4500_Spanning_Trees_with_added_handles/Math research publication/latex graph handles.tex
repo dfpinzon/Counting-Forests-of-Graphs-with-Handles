@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+
+
+% Define style for nodes
+\tikzstyle{every node}=[circle, draw, fill=black,
+                        inner sep=0pt, minimum width=4pt]
+%  Tutte's 8-cage
+\begin{tikzpicture}[thick,scale=0.8]
+    % The following path utilizes several useful tricks and features:
+    % 1) The foreach statement is put inside a path, so all the edges
+    %    will in fact be a the same path.
+    % 2) The node construct is used to draw the nodes. Nodes are special
+    %    in the way that they are drawn *after* the path is drawn. This
+    %    is very useful in this case because the nodes will be drawn on
+    %    top of the path and therefore hide all edge joins.
+    % 3) Simple arithmetics can be used when specifying coordinates.
+     \foreach  \x in {0,36,...,324}
+    {
+        \draw(\x:2) node {}  --  (\x-36:2);
+      };
+    \draw[->,>=latex]  (-36:2) node {} -- (-18:4);
+    \draw[->,>=latex]  (-18:4) node {} -- (0:2);
+    \draw[->,>=latex]  (2*36:2) node {} -- (90:4);
+    \draw[->,>=latex]  (90:4) node {} -- (3*36:2);
+\end{tikzpicture}\quad
+
+
+\end{document} 

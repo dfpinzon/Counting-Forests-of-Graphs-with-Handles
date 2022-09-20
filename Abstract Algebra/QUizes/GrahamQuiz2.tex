@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage{3500Quiz}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\begin{document}
+
+\quizheading{2}{Patrick Graham}
+
+\affirmation
+
+\exercise{1.  Let \(\ol{a},\) \(\ol{b},\) \(\ol{c}\in \Z_n\) for some natural number \(n.\)  Taking associativity of addition in \(\Z\) for granted, prove the Associative Property of Addition for \(\Z_n.\)  In other words, prove that \(\ol{a}+(\ol{b}+\ol{c})=(\ol{a}+\ol{b})+\ol{c}.\)}
+
+\proof {We will start with the forward implication. Because of the variables being in \(\Z_n\), we can rewrite the expression \(\ol{a}+(\ol{b}+\ol{c})\) into \(\ol{a +(b+c)}\). The values \(a,b,c\) are integers so we can use the associative property to rewrite the expression \(\ol{a+(b+c)}\) and finally we can rewrite the expression because the representatives are all still in \(\Z_n\) we can finish the implication with \((\ol{a}+\ol{b})+\ol{c}.\) and because all of these statements are bi-conditional the equality is finished.}
+\qed
+
+\begin{solution}
+Mr. Graham, you don't need implications for this proof; it can be done as a single chain of equalities.
+
+You cannot immediately rewrite ``the expression \(\ol{a}+(\ol{b}+\ol{c})\) into \(\ol{a +(b+c)}\).''  First you need to overbar the \(b+c,\) and then you can extend it over all three letters.
+
+I do agree with your next sentence:  Using ordinary associativity of the integers, we can regroup underneath the big bar.
+
+I'm not sure what you mean by ``we can rewrite the expression because the representatives are all still in \(\Z_n\).''
+
+Ok, your talk of a forward implication threw me off, but it does seem that you realize that this can be written as a chain of equalities.  So why not write it as such?  
+
+Points:  2.4
+\end{solution}
+
+\exercise{2.  Prove the following:  If \(p\) is prime and \(\ol{a}\cdot \ol{b}=\ol{0}\) in \(\Z_p,\) then \(\ol{a}=\ol{0}\) or \(\ol{b}=\ol{0}\).}
+\hint Use Theorem 1.5.2.
+
+
+\proof {Assume that p is prime and that \(\ol{a} \cdot \ol{b} = \ol{0}\) in \(\Z_p\). By Theorem 1.5.2, p is prime iff whenever \(p\mid ab\), then \(p\mid a\) or \(p\mid b\). Well, we have that p is prime and \(p \mid a\cdot b\) by assumption, which satisfies the conditions of the theorem so \(p\mid a\) or \(p\mid b.\) We will explore both cases,
+\begin{itemize}
+\item[(i)] If \(p\mid a\) then \(a \in \ol{0}\) and because the representatives of a class still denotes the class itself \(\ol{a} = \ol{0}.\)
+
+\item[(ii)] If \(p\mid b\) then \(b \in \ol{0}\) and because the representatives of a class still denotes the class itself \(\ol{b} = \ol{0}.\)
+\end{itemize}}
+This shows that if \(p\) is prime and \(\ol{a}\cdot \ol{b}=\ol{0}\) in \(\Z_p,\) then \(\ol{a}=\ol{0}\) or \(\ol{b}=\ol{0}\).
+\qed
+
+\begin{solution}
+You write that ``\(p \mid a\cdot b\) by assumption''.  Don't you mean that \(p\mid ab\) because \(ab\equiv_p 0\)?
+
+Let's look at your items.  If \(p\mid a\), then \(a\equiv_p 0,\) which means that \(\ol{a}=\ol{0}.\)  I don't think you need the intermediary statement ``\(a \in \ol{0}\) and because the representatives of a class still denotes the class itself...''.  The same goes for item (ii).
+
+Points:  2.4
+\end{solution}
+
+\exercise{3.  Let \(\gcd(a,n)=1.\) Prove the following cancellation law for congruences:  If \(ax\equiv_n ay,\) then \(x\equiv_n y.\)}
+\hint Use Theorem 1.3.6.
+
+\proof {Assume that \(\gcd(a,n)=1\) and \(ax\equiv_n ay\). This means that \(n\mid ax-ay\). Well we can rewrite this expression due to the distributive law as \(n\mid a(x-y)\). We know that \( n \nmid a \) by assumption so this means that \( n \mid x-y \) well that is by definition equivalent to \(x\equiv_n y.\) }
+\qed
+
+\begin{solution}
+There's no need to cite the distributive law; this should go without saying for your audience (your peers).
+
+After you say that \(n\mid x-y\), you need a period.  As it stands, this is a run-on sentence.  
+
+Points: 3
+\end{solution}
+
+\exercise{4.  Prove Theorem 2.3.5 by proving each of the following steps separately:
+\begin{itemize}
+\item[(i)]   First  prove  that the equation \(\ol{a}\cdot x=\ol{b}\) has solutions in \(\Z_n\) if and only if \(d\mid b.\)
+\item[(ii)]  Next, prove that each of
+\[
+\ol{u}, \ol{u+n^\prime}, \ol{u+2n^\prime}, \dots , \ol{u+(d-1)n^\prime}
+\]
+is a solution.  Here, \(\ol{u}\) is any particular solution guaranteed by (i), and \(n^\prime=n/d.\)
+\item[(iii)] Show that the solutions listed above are distinct.
+\item[(iv)]  Let \(\ol{v}\) be any solution.  Prove that \(\ol{v}=\ol{u+kn^\prime}\) for some \(k\in \Z\) with \(0\leq k<d.\)
+\end{itemize}}
+
+\proof {\begin{itemize}
+    \item[(i)]{Let \(a,b,n \in \Z \) with \(n > 1\) and \(\gcd(a,n) = d.\) Assume that the equation \(\ol{a} \cdot x = \ol{b}\) has solutions in \(\Z_n\).}
+
+\end{itemize}}
+\qed
+
+\begin{solution}
+First, I'd like to thank you for the excellent typesetting.  Your quiz compiled on the very first try.  Bravo!
+
+Second, I can see that you spent more time with these problems.  The improved grammar and syntax in your writing reflects an unhurried approach.  Again, thank you.  You will find that it pays dividends to attend to the expression of your ideas as well as the substance of your ideas.  In fact, the two are inseparable:  A great idea, poorly expressed, is just as worthless as a poor idea eloquently expressed.  By all means, brainstorm on scratchpaper, but treat your submission as you would the final draft of an essay in English.  It should flow when read aloud.
+
+Total Points:  7.8
+\end{solution}
+
+\end{document} 

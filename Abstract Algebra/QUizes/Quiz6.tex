@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+\usepackage{3500Quiz}
+\usepackage{bm}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\vp}{\varphi}
+
+\begin{document}
+
+\quizheading{6}{Put Your Name Here}
+
+\affirmation
+
+\exercise{1. Set \(R:=\{m+n\sqrt{10} \; | \; m,n\in \Z\}\) and define \(N: R\rightarrow \Z\) by \\
+\(N(m+n\sqrt{10})=m^2-10n^2\).
+\begin{itemize}
+\item[(a)]   Prove that \(R\) is a subring of the ring \(\R\) of real numbers.
+\item[(b)]   Prove that \(N(rs)=N(r)N(s)\) for all \(r,s\in R\).
+\item[(c)]   Prove that \(r\in R\) is a unit if and only if \(N(r)=\pm 1\).
+\item[(d)]   Prove that \(2\) is irreducible in \(R\).
+\item[(e)]   Prove that \(2\) is not prime in \(R\).
+\end{itemize}
+}
+
+\proof
+{
+    \begin{itemize}
+        \item[(a)] Prove that \(R\) is a subring of the ring \(\R\) of real numbers. 
+            \begin{itemize}
+                \item[(i)] Let \(r,s \in R\), then \(r-s = (m+n\sqrt{10} - (p+q\sqrt{10})= m+n\sqrt{10} - p - q\sqrt{10} = (m-p) + (n-q)\sqrt{10}\). (m-p) and (n-q) are both integers and by definition of \(R\), hence \((m-p) + (n-q)\sqrt{10} \in R\).
+                \item[(ii)] Let \(r,s \in R\), then \(rs = (m+n\sqrt{10}(p+q\sqrt{10}) = mp + mq\sqrt{10} + np\sqrt{10} + 10nq = (mp+10nq) + (mq+np)\sqrt{10}).\) \((mp+10nq),(mq+np) \in Z\), hence \(rs \in R\).
+            \end{itemize}
+        \item[(b)] Prove that \(N(rs)=N(r)N(s)\) for all \(r,s\in R\). 
+            Let \(r,s \in R\), then 
+            \begin{align*}
+                N(rs) &= N((mp+10nq) + (mq+np)\sqrt{10})\\
+                &= (mp+10nq)^2 - 10(mq+np)^2\\
+                &= (mp+10nq)(mp+10nq) - 10(mq+np)(mq+np)\\
+                &= (mp)^2+10mpnq+10mpnq +100(nq)^2- 10((mq)^2+2mpnq+(np)^2)\\
+                &= (mp)^2 +100(nq)^2-10(mq)^2-10(np)^2\\ 
+                &=  m^2p^2 - 10n^2p^2 - 10m^2q^2 + 100n^2q^2\\
+                &= (m^2-10n^2)(p^2-10q^2)\\ 
+                &= N(r)N(s).
+            \end{align*}
+        \item[(c)] Prove that \(r\in R\) is a unit if and only if \(N(r)=\pm 1\). 
+        \(\rightarrow\) Let \(r\) be a unit in \(R\), that means there exists an element \(s \in R\) such that \(rs=1\) and \(sr=1\), Well by part b \(N(rs) = N(1) = 1 = N(r)N(s)\). Since \(r\) and \(s\) are ints the only two integers that multiply together to get 1 are \(\pm1\).
+        \item[(d)] Prove that \(2\) is irreducible in \(R\). 
+        \item[(e)] Prove that \(2\) is not prime in \(R\). Since \(2 \mid 6\) and six can be written as \((4+\sqrt{10})(4-\sqrt{10})\), then 2 should be able to divide \(4-\sqrt{10}\) or \(4+\sqrt{10}\) but 2 divides neither of these hence it is not prime.
+    \end{itemize}
+}
+
+\qed
+
+\exercise{2. Let \(R\) be a UFD.  Prove that an irreducible element of \(R\) is prime.}
+
+\proof
+{
+Let \(r,s,t \in R \), \(r\) be irreducible, and \(r\mid st\). Then \(st = kr\), where \(k \in R\). Both \(st\) and \(kr\) can be written as a unique factorization of irreducible elements. Notice that r itself is irreducible so that \(st = (s_0s_1s_2...)(t_0t_1t_2...)= (k_0k_1k_2...)r'\), where \(r'\sim r\).Since \(r' = ur\), where u is a unit in \(R\), because R is UFD all factors of the left side are in the right and visa-versa  with rearrangement of this equation \((s_0s_1s_2...)(t_0t_1t_2...)\) = \((u(k_0k_1k_2...))r\) = \((k_0k_1k_2...)ur\), hence r is either in the factors of s or the factors of t. Thus \(r\mid s \) or \(r\mid t\).
+}
+
+\qed
+
+\exercise{3. Give two proofs that the integral domain \(R\) of Exercise 1 is not a UFD.  For an indirect proof, use Exercise 2.  For a direct proof, use that \(6=(2)(3)\).
+}
+
+\proof
+{
+    Direct proof- Well \(6\in R\) has no unique factorization because 6 can be factored as \(6 = (2)(3)\) and \(6 =  (4+\sqrt{10})(4-\sqrt{10})\) are not associates, and to be UFD every element of \(R\) must be able to be uniquely factorized thus \(R\) is not UFD.
+    
+    Indirect proof- Well, 2 is irreducible but is not prime, however exercise 2 says that irreducible are prime in UFDs, hence 2 is a counter example for R being UFD.
+    
+}
+\qed
+
+\exercise{4. Prove that the polynomial \(f(x)=3x^2-7x-5\) is irreducible over \(\Q\).}
+
+\proof
+{
+    By theorem 5.3.6 If \(s f(x)\) is irreducible in \(Z_p[x]\), then \(f(x)\) is irreducible over \(Q\). Let \(p = 2\), then \(\sigma f(x)= x^2-x-1\). 0,1 are not roots of \(\sigma f(x)\), so \(\sigma f(x)\) does not have a linear factor. Neither \(x^2\) nor \(x^2+x\) are factors of \(\sigma f(x)\) because x is not a factor. In fact, \(\sigma f(x)\) can not have a proper factor of degree two because \(deg(\sigma f(x)) = 2\). Therefore, \(\sigma f(x)\) is irreducible in \(Z_p[x]\), thus f(x) is irreducible over Q. 
+}
+
+\qed
+
+\end{document} 

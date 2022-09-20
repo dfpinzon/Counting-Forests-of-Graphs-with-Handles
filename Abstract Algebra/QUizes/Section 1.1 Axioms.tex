@@ -1,0 +1,283 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+%math symbols language
+\usepackage{graphicx,amsmath,latexsym,amssymb,mathalfa}
+%tables
+\usepackage{booktabs}
+%pictures and drawings
+\usepackage{tikz}
+%dots for matrices
+\usepackage{mathdots}
+%pdf maker
+%\usepackage[plainpages=false,pdfpagelabels,colorlinks=false,urlcolor=black,pdfpagemode=UseNone,pdfstartview=FitH]{hyperref}
+%pdf hyperlink refs
+\usepackage{cleveref}
+\usepackage{beamertexpower}
+%cursive font
+\usepackage[bb=boondox,bbscaled=.95,cal=boondoxo]{mathalfa}
+%theorems style
+\usepackage{amsthm}
+%\usepackage[nodisplayskipstretch]{setspace}
+
+%beamer presentation settings
+\useoutertheme{infolines}
+\usetheme[height=10mm]{Rochester}
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{items}[ball]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{navigation symbols}{}
+\usecolortheme[named=ForestGreen]{structure}
+\author{\textsc{Patrick Graham }}
+\title{\textsc Math 4500: Graph Theory}
+%\institute{\textsc{GGC}}
+
+
+
+
+
+\newenvironment{pf}
+    {{\noindent  \textrm{\textbf{Proof }}}~~}
+
+% MATH -------------------------------------------------------------------
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+
+%fancy letters and typesettings
+\newcommand{\nl}{\emptyset}
+\newcommand{\p}{\partial}
+\newcommand{\bR}{{\bf R}}
+\newcommand{\bC}{{\bf C}}
+\newcommand{\bZ}{{\bf Z}}
+\newcommand{\bN}{{\bf N}}
+\newcommand{\bQ}{{\bf Q}}
+\newcommand{\bK}{{\bf K}}
+\newcommand{\bI}{{\bf I}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bV}{{\bf V}}
+\newcommand{\cF}{{\mathcal F}}
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cB}{{\mathcal B}}
+\newcommand{\cC}{{\mathcal C}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cP}{{\mathcal P}}
+\newcommand{\cX}{{\mathcal X}}
+\newcommand{\cY}{{\mathcal Y}}
+\newcommand{\cZ}{{\mathcal Z}}
+\newcommand{\bs}{\backslash}
+\newcommand{\e}{{\epsilon}}
+\newcommand{\gs}{{\sigma}}
+\newcommand{\ve}{{\varepsilon}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Z}{{\mathbb Z}}
+\numberwithin{equation}{section} \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\sgn}{sgn}
+
+
+\newcommand{\B}[1]{\textbf{#1}}
+\newcommand{\tn}[1]{\textnormal{#1}}
+
+
+%shortcuts
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+ \newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ord}[1]{\left(#1\right)}
+ \newcommand{\vct}[1]{\left<#1\right>}
+ \newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+ \newcommand{\essnorm}[1]{\norm{#1}_{\ess}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\UU}{\widetilde{U}(F)}
+\newcommand{\bfrac}[2]{\displaystyle \frac{#1}{#2}}
+\newcommand{\ds}[1]{\displaystyle {#1}}
+\newcommand{\dsum}[2]{\ds{\sum_{#1}^{#2}} }
+\newcommand{\ora}[1]{\overrightarrow{#1}}
+
+\newcommand{\bpf}{\begin{proof}}
+\newcommand{\epf}{\end{proof}}
+\newtheorem{prop}{Proposition}[section]
+\newcommand{\bpr}{\begin{prop}}
+\newcommand{\epr}{\end{prop}}
+\newcommand{\bdf}{\begin{definition}}
+\newcommand{\edf}{\end{definition}}
+\newcommand{\blm}{\begin{lemma}}
+\newcommand{\elm}{\end{lemma}}
+\newcommand{\bex}{\begin{example}\rm }
+\newcommand{\eex}{\end{example}}
+\newcommand{\bcor}{\begin{corollary}}
+\newcommand{\ecor}{\end{corollary}}
+\newcommand{\bthm}{\begin{theorem}}
+\newcommand{\ethm}{\end{theorem}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bq}{\begin{equation}}
+\newcommand{\eq}{\end{equation}}
+\newcommand{\bb}{\begin{itemize}}
+\newcommand{\eb}{\end{itemize}}
+\newcommand{\bpw}{\begin{cases}}
+\newcommand{\epw}{\end{cases}}
+
+\hypersetup{pdfpagemode=UseNone}
+
+
+% -------------------------------------------------------------------
+\begin{document}
+%%%%%%%%%%%%%%%Title frame
+\begin{frame}[shrink=3]
+  \frametitle{\textsc{\normalsize Patrick Graham \\ \hspace{6cm} Georgia Gwinnett College}}
+
+
+\bigskip
+\bigskip\bigskip\bigskip
+
+{\centerline{\Huge\color{black} Graph Theory}}
+\bigskip\bigskip
+{\centerline{\Large \textsc{Chapter 1: Graphs}}}
+
+
+%\bigskip
+\bigskip\bigskip\bigskip
+
+{\centerline{\color{black} \textsc{Section 1.1 Introductions and Definitions}}}
+
+\smallskip
+
+{\centerline{\color{black}\textsc{\today}}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 2
+
+\begin{frame}{Introduction}
+Why study graph theory? \pause We already know about so many different kinds:  \pause algebraic,  \pause logarithmic, \pause trigonometric,  \pause and so many more! 
+
+\bigskip{}
+
+However, like so many other domains of mathematics are wont to incorporate are the ideas of abstraction (Which allows mathematicians to approach a lot more cases at once) and applications (the different domains that can be affected by this study).
+
+\bigskip{}
+
+\pause Just a few of these applications are Computer Science, Linguistics, Physics and Chemistry, Biology, and more. 
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with one handle rooted at 1}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Math 4500 Research- Spanning Trees with added handles/graph theory research 2019-12-17.pdf}
+ 
+\end{figure}
+\(T(G)\) 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with one handle rooted at 1}
+
+\(T_{(1)(2)}(G)\)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with one handle rooted at 1}
+
+\(T(G)+T_{(1)(2)}(G)\)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with one handle rooted at 2}
+\(T(G)\)
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with one handle rooted at 3}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with two handles rooted at 1 }
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with two handles rooted at 2 }
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with two handles rooted at 3}
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with two handles rooted at 4}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with two handles rooted at 5}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+
+\begin{frame}{Graph with 3 handles rooted at 1}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+\begin{frame}{Graph with 3 handles rooted at 1}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+\begin{frame}{Graph with 3 handles rooted at 2}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+\begin{frame}{Graph with 3 handles rooted at 3}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+\begin{frame}{Graph with 3 handles rooted at 4}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+\begin{frame}{Graph with 3 handles rooted at 5}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+\begin{frame}{Graph with 3 handles rooted at 6}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%Frame 
+\begin{frame}{Graph with 3 handles rooted at 7}
+
+\end{frame}
+
+\end{document}
